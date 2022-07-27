@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Cadastro de produtos</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="./campos.js"></script>
+    <script type="text/javascript" src="./validacoes.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./tabela.js"></script>
+  </head>
+  <body onload="exibirProdutos()">
+    <h2>Novo Produto</h2>
+    <div class="field">
+      <label for="nomeProduto">Nome:</label>
+      <input id="nomeProduto" type="text" />
+    </div>
+    <div class="field">
+      <label for="precoProduto">Preço:</label>
+      <input id="precoProduto" type="text" onKeyPress="return somenteNumeroDecimal(this,event);" />
+    </div>
+    <div class="field">
+      <label for="quantidadeProduto">Quantidade:</label>
+      <input id="quantidadeProduto" type="number" />
+    </div>
+    <button onClick="salvarProduto()">Salvar</button>
+    <br>
+    <h2>Produtos Cadastrados</h2>
+    <table border="1" cellspacing="0" cellpadding="3">
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>Preço</td>
+          <td>Quantidade</td>
+        </tr>
+      </thead>
+      <tbody id="corpoTabelaProdutos">
+      </tbody>
+    </table>
+  </body>
+</html>
